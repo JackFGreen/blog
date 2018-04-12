@@ -1,0 +1,20 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.3"
+  },
+  "scripts": {
+    "lint": "standard | snazzy src/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackFGreen/blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JackFGreen/blog/issues"
+  },
+  "homepage": "https://github.com/JackFGreen/blog#readme"
+}
