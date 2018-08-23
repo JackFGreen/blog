@@ -16,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/JackFGreen/blog/issues"
   },
-  "homepage": "https://github.com/JackFGreen/blog#readme"
+  "homepage": "https://github.com/JackFGreen/blog#readme",
+  "standard": {
+    "plugins": [
+      "html"
+    ],
+    "parser": "babel-eslint",
+    "ignore": [
+      "node_modules/**",
+      "dist/**",
+      "src/lib/**"
+    ]
+  }
 }
