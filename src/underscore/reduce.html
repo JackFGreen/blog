@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>underscore - reduce</title>
+</head>
+
+<body>
+  <script src="../lib/underscore.js"></script>
+  <script>
+  var sum = _.reduce([1, 2, 3], function(memo, num) {
+    return memo + num;
+  }, 10);
+  console.log(sum)
+
+  var obj = _.reduceRight({
+    a: 1,
+    b: 2,
+    c: 3
+  }, function(memo, num) {
+    return '' + memo + num;
+  }, 4);
+  console.log(obj)
+  </script>
+</body>
+
+</html>
