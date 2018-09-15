@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>underscore - where</title>
+</head>
+
+<body>
+  <script src="../lib/underscore.js"></script>
+  <script>
+  var list = [{
+    id: 0,
+    name: 'test'
+  }, {
+    id: 1,
+    name: 'test'
+  }, {
+    id: 2,
+    name: ''
+  }]
+  var match = {name: 'test'}
+  var result = _.where(list, match)
+  var first = _.findWhere(list, match)
+  console.log(result, first)
+  </script>
+</body>
+
+</html>
