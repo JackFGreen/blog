@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.6.1",
+    "ip": "^1.1.5",
     "snazzy": "^7.0.0",
     "standard": "^10.0.3"
   },
   "scripts": {
-    "lint": "standard | snazzy src/**/*.js"
+    "lint": "standard | snazzy src/**/*.js",
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
