@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>scroll</title>
+  <style>
+    .box {
+      height: 300px;
+    }
+    .modal {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+    .mask {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .content {
+      width: 100px;
+      height: 200px;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      background: pink;
+      word-break: break-all;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">1</div>
+  <div class="box">2
+    <button class="btn">click</button>
+  </div>
+  <div class="box">3</div>
+
+  <div class="modal">
+    <div class="mask"></div>
+    <div class="content">contentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontent</div>
+  </div>
+
+  <script>
+    const html = document.documentElement
+    const btn = document.querySelector('.btn')
+    const modal = document.querySelector('.modal')
+    const mask = document.querySelector('.mask')
+    const content = document.querySelector('.content')
+
+    btn.onclick = () => {
+      modal.style.display = 'block'
+      hideContent()
+      // preventTouch()
+    }
+
+    function hideContent () {
+      // html.style.height = '100%'
+      // html.style.overflow = 'hidden'
+
+      html.style.position = 'fixed'
+    }
+
+    function preventTouch () {
+      mask.addEventListener('touchmove', e => e.preventDefault())
+    }
+  </script>
+</body>
+</html>
