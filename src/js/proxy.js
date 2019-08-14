@@ -20,8 +20,10 @@ const _p = new Proxy(p, {
   }
 })
 
-_p.attrs.hair = 'new hair'
 _p['attrs.hair'] = 'new hair'
+console.log(p.attrs.hair)
+_p.attrs.hair = 'new hair'
+console.log(p.attrs.hair)
 // _p.name = 'new name'
 // _p.arr.push(3)
 // _p.say = 'say'

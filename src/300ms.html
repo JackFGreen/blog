@@ -8,9 +8,22 @@
   <title>300ms</title>
 </head>
 <body>
-  <div class="btn">click</div>
+  <div class="wrap">
+    <button class="btn">click</button>
+  </div>
+  <style>
+    .wrap {
+      width: 200px;
+      height: 200px;
+      background: #ccc;
+      display: flex;
+    }
+    .btn {
+      margin: auto;
+    }
+  </style>
   <script>
-    const btn = document.querySelector('.btn')
+    const btn = document.querySelector('.wrap')
     btn.onclick = () => {
       btn.style.background = 'pink'
     }
