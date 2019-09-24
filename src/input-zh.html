@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>input-zh</title>
+  </head>
+  <body>
+    <input type="text" class="input" />
+  </body>
+  <script type="module">
+    /*
+input 123
+
+compositionstart 123 (按下前input值)
+
+compositionupdate 123 (按下前input值)
+input 123 ab
+
+compositionupdate 123 ab (按下前input值)
+input 123 安倍
+
+compositionend 123 安倍 (结束输入后input值)
+ */
+    const inp = document.querySelector('.input')
+    inp.addEventListener('input', e => {
+      if (e.target.composing) return
+      console.log('input', e.target.value)
+    })
+    inp.addEventListener('compositionstart', e => {
+      console.log('compositionstart', e.target.value)
+      e.target.composing = true
+    })
+    inp.addEventListener('compositionupdate', e => {
+      console.log('compositionupdate', e.target.value)
+    })
+    inp.addEventListener('compositionend', e => {
+      console.log('compositionend', e.target.value)
+      e.target.composing = false
+      // 结束后再执行一次 input 事件
+      var event = document.createEvent('HTMLEvents')
+      event.initEvent('input')
+      e.target.dispatchEvent(event)
+    })
+  </script>
+</html>

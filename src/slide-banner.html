@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>slide-banner</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 300px;
+        height: 150px;
+        margin: auto;
+        background: #ccc;
+        overflow: hidden;
+        position: relative;
+      }
+      .slider {
+        width: 9999em;
+        height: 100%;
+        transition: all 1s ease;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .item {
+        list-style: none;
+        height: 100%;
+        width: 300px;
+        float: left;
+      }
+      .item.one {
+        background: red;
+      }
+      .item.two {
+        background: green;
+      }
+      .item.three {
+        background: blue;
+        transition: all 1s ease;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul class="slider">
+        <li class="item one">1</li>
+        <li class="item two">2</li>
+        <li class="item three">3</li>
+      </ul>
+    </div>
+    <script>
+      const sliderEl = document.querySelector('.slider');
+      const last = document.querySelector('.three');
+      const warpEl = document.querySelector('.wrap');
+      const moveWidth = -warpEl.clientWidth;
+
+      let i = 0;
+      const len = sliderEl.childElementCount;
+      function move() {
+        if (i === 0) {
+          last.style.transition = 'all 1s ease';
+          last.style.left = len * moveWidth + 'px';
+        }
+        if (i === 1) {
+          last.style.transition = 'none';
+          last.style.left = 0;
+        }
+
+        sliderEl.style.transition = 'all 1s ease';
+        sliderEl.style.left = i * moveWidth + 'px';
+
+        i++;
+
+        setTimeout(() => {
+          if (i === len) {
+            i = 0;
+            last.style.transition = 'none';
+            last.style.left = len * moveWidth + 'px';
+            sliderEl.style.transition = 'none';
+            sliderEl.style.left = -moveWidth + 'px';
+          }
+          setTimeout(() => {
+            move();
+          }, 10);
+        }, 2000);
+      }
+      move();
+    </script>
+  </body>
+</html>
