@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=750, initial-scale=0.5" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>viewport</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 30px;
+      }
+      .box {
+        background: pink;
+        border: 1px solid #000;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>innerWidth: <span class="inner"></span></div>
+    <div>clientWidth: <span class="client"></span></div>
+    <div class="box" style="width: 750px;">750</div>
+    <div class="box" style="width: 414px;">414</div>
+    <div class="box" style="width: 375px;">375</div>
+    <div class="box" style="width: 320px;">320</div>
+    <div class="box" style="width: 187.5px;">375/2</div>
+    <p>
+      对斯洛伐克技术开发健康的绿色减肥快乐圣诞节福利咳嗽的尽快立法精神独立开发接口脸上的肌肤克里斯朵夫看来是多亏了饭就开始独立房间
+    </p>
+
+    <script>
+      document.querySelector('.inner').innerHTML = window.innerWidth
+      document.querySelector('.client').innerHTML = document.documentElement.clientWidth
+    </script>
+  </body>
+</html>
