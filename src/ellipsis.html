@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ellipsis</title>
+    <style>
+      .ellipsis {
+        width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .ellipsis-multi {
+        width: 200px;
+        height: 70px;
+        word-break: break-all;
+        overflow: hidden;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="ellipsis">
+      ellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsis
+    </p>
+
+    <p class="ellipsis-multi">
+      ellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsisellipsis
+    </p>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>fuzzy search</title>
+  </head>
+  <body>
+    <input type="text" class="search" />
+    <ul class="list"></ul>
+
+    <script>
+      const list = [
+        '上海野生动物园',
+        '上饶野生动物园',
+        '北京巷子',
+        '上海中心',
+        '上海黄埔江',
+        '迪士尼上海',
+        '陆家嘴上海中心'
+      ]
+
+      const fragEl = document.createDocumentFragment()
+      const listEl = document.querySelector('.list')
+
+      const searchEl = document.querySelector('.search')
+      searchEl.oninput = function(e) {
+        const val = e.target.value
+        console.log(val)
+
+        if (!val) return
+
+        const result = list.filter(e => {
+          if (e.includes(val)) {
+            const liEl = document.createElement('li')
+            const reg = new RegExp(`\(${val}\)`)
+            const str = e.replace(reg, '<span style="color:red;">$1</span>')
+            liEl.innerHTML = str
+            fragEl.append(liEl)
+            return fragEl
+          }
+        })
+        listEl.append(fragEl)
+        console.log(result)
+      }
+    </script>
+  </body>
+</html>
