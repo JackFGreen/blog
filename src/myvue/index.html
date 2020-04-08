@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myvue</title>
+  <script src="./batch.js"></script>
+  <script src="./dep.js"></script>
+  <script src="./observer.js"></script>
+  <script src="./watcher.js"></script>
+  <script src="./compile.js"></script>
+  <script src="./mvvm.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button onclick="add()">click</button>
+    <input type="text" v-model="a">
+    <span v-bind="a"></span>
+    <p v-bind="b"></p>
+  </div>
+
+  <script>
+    const vm = new MVVM({
+      el: document.getElementById('app'),
+      data: {
+        a: '',
+        b: ''
+      }
+    })
+
+    let n = 0
+    function add () {
+      console.log('===click set val')
+      for (let i = 0; i < 10; i++) {
+        vm.data.b = n++
+      }
+      vm.data.a = n++
+    }
+  </script>
+</body>
+</html>

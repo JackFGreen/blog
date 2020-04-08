@@ -7,11 +7,14 @@
     "gulp-connect": "^5.6.1",
     "ip": "^1.1.5",
     "snazzy": "^7.0.0",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   },
   "scripts": {
     "lint": "standard | snazzy src/**/*.js",
-    "start": "gulp"
+    "start": "gulp",
+    "build": "webpack src/mywebpack --config src/mywebpack/webpack.config.js"
   },
   "repository": {
     "type": "git",

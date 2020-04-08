@@ -12,12 +12,12 @@ setTimeout(() => {
   console.log('aa', o.name)
 }, 1000)
 
-export {
-  a,
-  o,
-  modify
-}
+// export {
+//   a,
+//   o,
+//   modify
+// }
 
-// exports.a = a
-// exports.o = o
-// exports.modify = modify
+exports.a = a
+exports.o = o
+exports.modify = modify
