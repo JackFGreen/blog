@@ -3,7 +3,7 @@
 ```sh
  ___ 🚩__
 /___P___/O......
-O      O......#THE GREAT WHEEL OF HISTORY oops...
+O      O......# THE GREAT WHEEL OF HISTORY oops...
 ```
 
 ## 前言
@@ -22,11 +22,11 @@ _PS: 英文不好的同学请自备翻译器，本文不保证翻译以及个人
 
 - `1950s-1960s`，`对象` 和 `面向` 首次出现在 `MIT`
 - `1958`，John McCarthy 在 MIT 开发 LISP
-- `1960`，LISP 1 的手册中提到 `objects`[[10]](###[10])
-- `1962`，LISP 1.5 的手册中定义了 `object`[[11]](###[11])
-- `1962`，Ole-Johan Dahl 和 Kristen Nygaard 开发 [Simula](###Simula)
+- `1960`，LISP 1 的手册中提到 `objects`[[10]](#10)
+- `1962`，LISP 1.5 的手册中定义了 `object`[[11]](#11)
+- `1962`，Ole-Johan Dahl 和 Kristen Nygaard 开发 [Simula](#Simula)
 - `1966`，Sumila 引入 `类和子类`
-- `1966`，Alan Kay 受 Sketchpad、Simula 等影响， 想到 OOP 架构，之后对 LISP 的深入理解，影响了他的架构思考[[12]](###[12])
+- `1966`，Alan Kay 受 Sketchpad、Simula 等影响， 想到 OOP 架构，之后对 LISP 的深入理解，影响了他的架构思考[[12]](#12)
 - `1967`，Simula 在会议上介绍 `Class and Subclass Declarations`，Simula 67 被认为是第一个面向对象的语言
 - `1967`，Alan Kay 被问在干嘛，回答到 `object-oriented programming`，OOP 这个词首次出现
 - `1972`，Alan Kay 等人开发 `Smalltalk`，之后影响了 Lisp 引入 OOP
