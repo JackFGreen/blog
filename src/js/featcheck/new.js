@@ -1,0 +1,2 @@
+// const myFn = () ==> {}
+const myFn = () => {}
