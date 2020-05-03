@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>click prevent</title>
+    <style>
+      #child2,
+      #child3 {
+        width: 100px;
+        height: 100px;
+      }
+
+      #child2 {
+        background: #ccc;
+      }
+
+      #child3 {
+        background: pink;
+        margin-top: -50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      parent
+      <div id="child">child</div>
+    </div>
+
+    <div id="child2">child2</div>
+    <div id="child3">child3</div>
+
+    <script>
+      document.getElementById('parent').onclick = function () {
+        console.log('parent')
+      }
+
+      document.getElementById('child').onclick = function (e) {
+        e.stopPropagation()
+        console.log('child')
+      }
+
+      document.getElementById('child2').onclick = function (e) {
+        console.log('child2')
+      }
+      document.getElementById('child3').onclick = function (e) {
+        console.log('child3')
+      }
+    </script>
+  </body>
+</html>
