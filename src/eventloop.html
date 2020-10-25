@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event loop</title>
+    <style>
+      #outer {
+        width: 200px;
+        height: 200px;
+        background: #333;
+      }
+      #inner {
+        width: 150px;
+        height: 150px;
+        background: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      <div id="inner"></div>
+    </div>
+
+    <script>
+      const outer = document.getElementById('outer')
+      const inner = document.getElementById('inner')
+
+      inner.addEventListener('click', click)
+      outer.addEventListener('click', click)
+
+      const arr = ['red', 'green', 'blue']
+      let i = 0
+
+      // click()
+      inner.click() // render after timeout
+
+      function click() {
+        console.log('click', this.id)
+
+        if (i > arr.length - 1) i = 0
+
+        inner.style.background = arr[i++]
+
+        setTimeout(() => {
+          alert('timeout')
+          console.log('timeout')
+        })
+
+        Promise.resolve().then(() => {
+          alert('promise')
+          console.log('promise')
+        })
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<script>
+  function _inherit(sub, sup) {
+    console.log('_inherit', sub.name, '-from-', sup.name)
+    sub.prototype = Object.create(sup.prototype, {
+      constructor: {
+        value: sub,
+      },
+    })
+  }
+
+  function _super(sup, args) {
+    const result = sup.apply(this, args)
+    console.log('_super-result', result)
+    return result || this
+  }
+</script>
+
+<script>
+  function myArr() {
+    return _super.call(this, Array, arguments)
+  }
+  _inherit(myArr, Array)
+  const arr = new myArr(3)
+  console.log(arr)
+</script>
+
+<script>
+  function Parent() {
+    this.a = 'a'
+  }
+  Parent.prototype.fn = function () {
+    console.log('fn')
+  }
+
+  function Child() {
+    var _this = _super.call(this, Parent, arguments)
+    _this.b = 'b'
+    return _this
+  }
+
+  _inherit(Child, Parent)
+  Child.prototype.fnn = function () {
+    console.log('fnn')
+  }
+
+  const c = new Child()
+  console.log(c)
+</script>

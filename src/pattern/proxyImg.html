@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>proxy img</title>
+  </head>
+  <body>
+    <script>
+      // myImage负责往页面中添加img标签
+      var myImage = (function () {
+        var imgNode = document.createElement('img')
+        document.body.appendChild(imgNode)
+        return {
+          setSrc: function (src) {
+            console.log(src)
+            imgNode.src = src
+          },
+        }
+      })()
+
+      //proxyImage负责预加载图片，并在预加载完成之后把请求交给本体myImage
+      var proxyImage = (function () {
+        var img = new Image()
+        img.onload = function () {
+          myImage.setSrc(this.src)
+        }
+        return {
+          setSrc: function src(src) {
+            myImage.setSrc(
+              'http://img4.imgtn.bdimg.com/it/u=3458475739,295617657&fm=26&gp=0.jpg'
+            )
+            setTimeout(() => {
+              img.src = src
+            }, 3000);
+          },
+        }
+      })()
+      proxyImage.setSrc(
+        'http://img4.imgtn.bdimg.com/it/u=1414817518,908255268&fm=26&gp=0.jpg'
+      )
+    </script>
+  </body>
+</html>

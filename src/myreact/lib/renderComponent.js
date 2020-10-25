@@ -1,8 +1,9 @@
 import { _render } from './react-dom'
 
 /**
-componentWillUpdate
-componentDidUpdate
+  componentWillUpdate
+render update dom
+  componentDidUpdate
 componentDidMount
  */
 
