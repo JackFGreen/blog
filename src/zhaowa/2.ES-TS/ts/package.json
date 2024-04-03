@@ -1,10 +1,11 @@
 {
-  "name": "metadata",
+  "name": "ts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "/opt/homebrew/bin/pnpm/tsx index.ts"
+    "metadata": "/opt/homebrew/bin/pnpm/tsx metadata/index.ts",
+    "decorator": "/opt/homebrew/bin/pnpm/tsx decorator/index.ts"
   },
   "keywords": [],
   "author": "",
