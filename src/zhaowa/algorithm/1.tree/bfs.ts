@@ -19,6 +19,7 @@ function bfs(root: TreeNode) {
       // 取出当前层数据
       const cur = queue.shift()!
 
+      // 访问当前节点
       console.log(cur.value)
 
       // 放入下一层，len 是固定的，所以 push 的数据在下一次 while
