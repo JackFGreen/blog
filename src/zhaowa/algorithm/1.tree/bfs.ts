@@ -12,6 +12,8 @@ function bfs(root: TreeNode) {
 
   // 遍历每一层
   while (queue.length) {
+    console.log('---level', level++)
+
     // 固定 len，放在 for 里面由于 push 会是动态的，每一层数据会乱
     const len = queue.length
 
@@ -26,8 +28,6 @@ function bfs(root: TreeNode) {
       if (cur.left) queue.push(cur.left)
       if (cur.right) queue.push(cur.right)
     }
-
-    console.log('---level', ++level)
   }
 }
 
